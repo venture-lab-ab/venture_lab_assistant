@@ -4,6 +4,8 @@ void main() {
   runApp(MyApp());
 }
 
+
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -100,6 +102,9 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Text(
+              'hosthans check check'
+            ),
           ],
         ),
       ),
@@ -111,3 +116,19 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+class randomTest extends StatefulWidget {
+  const randomTest({Key? key}) : super(key: key);
+
+  @override
+  _randomTestState createState() => _randomTestState();
+}
+
+class _randomTestState extends State<randomTest> {
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Hallo",
+    );
+  }
+}
+

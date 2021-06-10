@@ -1,6 +1,6 @@
 # venture_lab_assistant
 
-Official Venture-Lab App
+Official VentureLab App
 
 ## Getting Started
 

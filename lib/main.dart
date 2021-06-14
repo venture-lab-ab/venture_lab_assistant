@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _increaseCounter(){
+  void _decreaseCounter(){
     setState(() {
       _counter--;
     });
@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             FlatButton(
-                onPressed: _increaseCounter,
+                onPressed: _decreaseCounter,
                 textColor: Colors.purple,
                 
                 child: Column(

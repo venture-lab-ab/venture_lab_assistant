@@ -118,6 +118,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(
                         'hosthans check check'
                     ),
+                    Text("Broxy check check"
+                    ),
                   ]
 
                 )

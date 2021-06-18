@@ -9,7 +9,10 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Hallo :)"),
-    );
+        child: Text("Hallo :)"),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("lib/background/img.jpg"),
+                fit: BoxFit.cover)));
   }
 }

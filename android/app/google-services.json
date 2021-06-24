@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "819222017160",
+    "project_id": "venturelabab",
+    "storage_bucket": "venturelabab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819222017160:android:d6d78615c80f67ead6db3d",
+        "android_client_info": {
+          "package_name": "venturelab.venture_lab_assistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819222017160-8rb4ob38nobkoe3sgb5980ae966aps79.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRMEl7VOqc5UmQ97A8iQVvlEuLG4ACKCk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819222017160-8rb4ob38nobkoe3sgb5980ae966aps79.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

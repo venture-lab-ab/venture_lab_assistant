@@ -1,9 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
 import 'package:venture_lab_assistant/main.dart';
 import 'dashboard_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 const users = const {
   'abc@gmail.com': 'abc',
@@ -37,13 +36,11 @@ class LoginScreen extends StatelessWidget {
     });
   }
 
-  void printsth(){
+  void printsth() {
     print('Test');
   }
 
   static const logopath = 'images/vlogo.png';
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +49,6 @@ class LoginScreen extends StatelessWidget {
       logo: logopath,
       onLogin: _authUser,
       onSignup: _authUser,
-
       onSubmitAnimationCompleted: () {
         print('Navigator');
         Navigator.push(
@@ -64,6 +60,3 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
-
-

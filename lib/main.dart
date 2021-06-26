@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:venture_lab_assistant/bottomNaviBar.dart';
 import 'Login.dart';
@@ -5,10 +6,6 @@ import 'Login.dart';
 void main() {
   runApp(MyApp());
 }
-
-//Test
-
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -65,11 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _decreaseCounter(){
+  void _decreaseCounter() {
     setState(() {
       _counter--;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -81,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return MyStatefulWidget();
   }
 }
+
 class randomTest extends StatefulWidget {
   const randomTest({Key? key}) : super(key: key);
 
@@ -96,4 +95,3 @@ class _randomTestState extends State<randomTest> {
     );
   }
 }
-

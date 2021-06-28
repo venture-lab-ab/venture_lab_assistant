@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:819222017160:ios:ee910c1d6d3a29a8d6db3d</string>
+	<key>DATABASE_URL</key>
+	<string>https://venturelabab-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

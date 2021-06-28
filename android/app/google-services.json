@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "819222017160",
+    "firebase_url": "https://venturelabab-default-rtdb.firebaseio.com",
     "project_id": "venturelabab",
     "storage_bucket": "venturelabab.appspot.com"
   },
@@ -29,6 +30,13 @@
             {
               "client_id": "819222017160-8rb4ob38nobkoe3sgb5980ae966aps79.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "819222017160-vv5jli0rpkn2gvhik1lg4pnj8dnjs71p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "venture-lab.ventureLabAssistant"
+              }
             }
           ]
         }

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:venture_lab_assistant/bottomNaviBar.dart';
 import 'Login.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

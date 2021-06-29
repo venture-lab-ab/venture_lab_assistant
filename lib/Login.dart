@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'HomePage.dart';
 import 'package:venture_lab_assistant/main.dart';
 import 'dashboard_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -53,7 +54,8 @@ class LoginScreen extends StatelessWidget {
         print('Navigator');
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => MyHomePage(title: "Test")),
+          MaterialPageRoute(builder: (context) => Home()),
+            //MyHomePage
         );
       },
       onRecoverPassword: _recoverPassword,

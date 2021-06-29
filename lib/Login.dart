@@ -5,11 +5,6 @@ import 'package:venture_lab_assistant/main.dart';
 import 'dashboard_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-const users = const {
-  'abc@gmail.com': 'abc',
-  'hunter@gmail.com': 'hunter',
-};
-
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2);
 
@@ -60,14 +55,9 @@ class LoginScreen extends StatelessWidget {
     });
   }
 
-  Future<String> _recoverPassword(String name) {
+  Future<String>? _recoverPassword(String name) {
     print('Name: $name');
-    return Future.delayed(loginTime).then((_) {
-      if (!users.containsKey(name)) {
-        return 'User not exists';
-      }
-      return "Huch";
-    });
+    return null;
   }
 
   void printsth() {

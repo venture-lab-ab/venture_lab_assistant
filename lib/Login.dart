@@ -5,6 +5,7 @@ import 'package:venture_lab_assistant/main.dart';
 import 'dashboard_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+//t
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2);
 

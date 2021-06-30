@@ -21,14 +21,23 @@ class InboxScreen extends StatelessWidget {
 class VentureLabScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text("VentureLab", style: TextStyle(
+          color: Colors.purple,
+          backgroundColor: Colors.white,
+        ),),
+        backgroundColor: Colors.white,
+      ),
+      body: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("images/vlogo.png"),
-            fit: BoxFit.cover,
-            colorFilter: new ColorFilter.mode(Colors.white.withOpacity(0.2), BlendMode.dstATop),
-          )
+            image: DecorationImage(
+              image: AssetImage("images/vlogo.png"),
+              fit: BoxFit.cover,
+              colorFilter: new ColorFilter.mode(Colors.white.withOpacity(0.2), BlendMode.dstATop),
+            )
         ),
+      ),
     );
 
   }

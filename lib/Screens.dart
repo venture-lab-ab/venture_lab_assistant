@@ -21,9 +21,16 @@ class InboxScreen extends StatelessWidget {
 class VentureLabScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Index 2:Venture!"),
+    return  Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/vlogo.png"),
+            fit: BoxFit.cover,
+            colorFilter: new ColorFilter.mode(Colors.white.withOpacity(0.2), BlendMode.dstATop),
+          )
+        ),
     );
+
   }
 }
 

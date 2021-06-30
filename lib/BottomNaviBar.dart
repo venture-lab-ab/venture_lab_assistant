@@ -22,7 +22,7 @@ class BottomNaviBar extends StatelessWidget {
             'images/vllogob.png',
             scale: 5,
           ),
-          label: '',
+          label: "",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.notifications),

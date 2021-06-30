@@ -18,8 +18,11 @@ class BottomNaviBar extends StatelessWidget {
           label: 'Inbox',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.school_sharp),
-          label: 'Venture',
+          icon: new Image.asset(
+            'images/vllogob.png',
+            scale: 5,
+          ),
+          label: '',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.notifications),

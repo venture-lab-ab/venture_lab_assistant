@@ -26,9 +26,12 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.grey,
+        primarySwatch: Colors.blue,
+        highlightColor: Colors.grey.withOpacity(.3),
+        indicatorColor: Colors.grey.withOpacity(.3),
       ),
       home: LoginScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

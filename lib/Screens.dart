@@ -27,7 +27,7 @@ class VentureLabScreen extends StatelessWidget {
       await launch(
         url,
         forceSafariVC: true,
-        forceWebView: false,
+        forceWebView: true,
         headers: <String, String>{'header_key': 'header_value'},
       );
     } else {
@@ -50,16 +50,14 @@ class VentureLabScreen extends StatelessWidget {
       ),
       body: Container(
         width: double.infinity,
-
         decoration: BoxDecoration(
-           image: DecorationImage(
-             image: AssetImage("images/vlogo.png"),
-             fit: BoxFit.cover,
-             colorFilter: new ColorFilter.mode(
-                 Colors.white.withOpacity(0.2), BlendMode.dstATop),
-           ),
+          image: DecorationImage(
+            image: AssetImage("images/vlogo.png"),
+            fit: BoxFit.cover,
+            colorFilter: new ColorFilter.mode(
+                Colors.white.withOpacity(0.2), BlendMode.dstATop),
+          ),
         ),
-
         child: Column(children: <Widget>[
           ElevatedButton(
             child: const Text('Visit our Website'),

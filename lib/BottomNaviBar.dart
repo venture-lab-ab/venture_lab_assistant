@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+const VLBLUE = const Color(0xff1a7aff);
+
 class BottomNaviBar extends StatelessWidget {
   final selectedIndex;
   ValueChanged<int> onClicked;
@@ -33,11 +35,12 @@ class BottomNaviBar extends StatelessWidget {
           label: 'Account',
         )
       ],
+      elevation: 5.0,
       currentIndex: selectedIndex,
       onTap: onClicked,
       selectedItemColor: Colors.grey,
       //backgroundColor: Colors.purple,
-      unselectedItemColor: Colors.purple,
+      unselectedItemColor: VLBLUE,
     );
   }
 }

@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
         print('Navigator');
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Home()),
+          MaterialPageRoute(builder: (context) => Home(selectedIndex: 0,)),
             //MyHomePage
         );
       },

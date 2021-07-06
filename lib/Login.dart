@@ -3,7 +3,10 @@ import 'package:flutter_login/flutter_login.dart';
 import 'HomePage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-//t
+/*Beispiel Login
+* Email: hallo@vl.com
+* Password: hallo123
+*/
 class LoginScreen extends StatelessWidget {
   Duration get loginTime => Duration(milliseconds: 2);
 

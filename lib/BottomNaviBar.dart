@@ -38,9 +38,9 @@ class BottomNaviBar extends StatelessWidget {
       elevation: 5.0,
       currentIndex: selectedIndex,
       onTap: onClicked,
-      selectedItemColor: Colors.grey,
+      selectedItemColor: VLBLUE,
       //backgroundColor: Colors.purple,
-      unselectedItemColor: VLBLUE,
+      unselectedItemColor: Colors.grey,
     );
   }
 }

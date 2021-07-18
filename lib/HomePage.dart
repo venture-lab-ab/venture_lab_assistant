@@ -1,5 +1,7 @@
+import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'BottomNaviBar.dart';
+import 'FloatingActionButton.dart';
 import 'Login.dart';
 import 'NavigationDrawer.dart';
 import 'Screens.dart';
@@ -17,16 +19,15 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  _HomeState({required this.selectedIndex});
   int selectedIndex;
+  _HomeState({required this.selectedIndex});
+
+  final PageController pageController = PageController(initialPage: 0);
+  int pageIndex = 0;
+
 
   List screens = [HomeScreen(), InboxScreen(), VentureLabScreen(), NotificationScreen(), AccountScreen(), LoginScreen()];
 
-  void onClicked(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +38,35 @@ class _HomeState extends State<Home> {
           elevation: 0.0,
           backgroundColor: Colors.transparent,
         ),
-        body: Center(
-          child: screens.elementAt(selectedIndex),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingButton(
+          controller: pageController,
+        ),
+        body: PageView(
+          //physics: NeverScrollableScrollPhysics(),
+          controller: pageController,
+          pageSnapping: true,
+          onPageChanged: (index){
+            setState(() {
+              pageIndex = index;
+            });
+            print(pageIndex);
+          },
+          children: [
+            Container(child: HomeScreen()),
+            Container(child: InboxScreen()),
+            Container(child: VentureLabScreen()),
+            Container(child: NotificationScreen()),
+            Container(child: AccountScreen()),
+          ],
         ),
         drawer: NaviDrawer(
         ),
+
         bottomNavigationBar: BottomNaviBar(
-          selectedIndex: selectedIndex,
-          onClicked: onClicked,
+          controller: pageController,
         ),
+
     );
   }
 

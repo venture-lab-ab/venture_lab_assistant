@@ -12,7 +12,7 @@ class FloatingButton extends StatelessWidget {
       child: FittedBox(
         child: FloatingActionButton(
           onPressed: () {
-            controller.animateToPage(2, duration: Duration(seconds: 1), curve: Curves.linear);
+            controller.animateToPage(2, duration: Duration(seconds: 1), curve: Curves.ease);
             //pageController.animateToPage(2, duration: Duration(milliseconds: 350), curve: Curves.bounceIn);
           },
           child: new Image.asset(

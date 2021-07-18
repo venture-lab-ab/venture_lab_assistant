@@ -61,6 +61,7 @@ class _HomeState extends State<Home> {
           ],
         ),
         drawer: NaviDrawer(
+          controller: pageController,
         ),
 
         bottomNavigationBar: BottomNaviBar(

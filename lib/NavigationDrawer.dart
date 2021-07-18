@@ -11,7 +11,9 @@ const VLPURPLE = const Color(0xffa836f6);
 class NaviDrawer extends StatelessWidget {
 
   final padding = EdgeInsets.symmetric(horizontal: 20);
+  final PageController controller;
 
+  NaviDrawer({Key? key, required this.controller}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -30,7 +32,7 @@ class NaviDrawer extends StatelessWidget {
               name: name,
               email: email,
               image: image,
-              onClicked: () => selectedItem(context, 4),
+              onClicked: () => controller.animateToPage(4, duration: Duration(seconds: 1), curve: Curves.ease),
             ),
             Container(
               padding: padding,
@@ -39,19 +41,19 @@ class NaviDrawer extends StatelessWidget {
                   _createDrawerItem(
                     icon: Icons.home,
                     text: 'Home',
-                    onClicked: () => selectedItem(context, 0),
+                    onClicked: () => controller.animateToPage(0, duration: Duration(seconds: 1), curve: Curves.ease),
                   ),
                   const SizedBox(height: 16),
                   _createDrawerItem(
                     icon: Icons.inbox,
                     text: 'Inbox',
-                    onClicked: () => selectedItem(context, 1),
+                    onClicked: () => controller.animateToPage(1, duration: Duration(seconds: 1), curve: Curves.ease),
                   ),
                   const SizedBox(height: 16),
                   _createDrawerItem(
                     icon: Icons.notifications,
                     text: 'Notifications',
-                    onClicked: () => selectedItem(context, 3),
+                    onClicked: () => controller.animateToPage(3, duration: Duration(seconds: 1), curve: Curves.ease),
                   ),
                   const SizedBox(height: 24),
                   Divider(color: Colors.white,),
@@ -59,13 +61,13 @@ class NaviDrawer extends StatelessWidget {
                   _createDrawerItem(
                     icon: Icons.settings,
                     text: 'Settings',
-                    onClicked: () => selectedItem(context, 2),
+                    onClicked: () => controller.animateToPage(4, duration: Duration(seconds: 1), curve: Curves.ease),
                   ),
                   const SizedBox(height: 16),
                   _createDrawerItem(
                     icon: Icons.exit_to_app,
                     text: 'Log out',
-                    onClicked: () => selectedItem(context, 5),
+                    onClicked: () => controller.animateToPage(3, duration: Duration(seconds: 1), curve: Curves.ease),
                   ),
                 ],
               ),

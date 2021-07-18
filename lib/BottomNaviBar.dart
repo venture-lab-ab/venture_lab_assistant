@@ -20,35 +20,35 @@ class BottomNaviBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              iconSize: 30.0,
+              iconSize: 28.0,
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(Icons.home),
               onPressed: () {
-                controller.animateToPage(0, duration: Duration(seconds: 1), curve: Curves.linear);
+                controller.animateToPage(0, duration: Duration(seconds: 1), curve: Curves.ease);
               },
             ),
             IconButton(
-              iconSize: 30.0,
+              iconSize: 28.0,
               padding: EdgeInsets.only(right: 28.0),
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.inbox),
               onPressed: () {
-                controller.animateToPage(1, duration: Duration(seconds: 1), curve: Curves.linear);
+                controller.animateToPage(1, duration: Duration(seconds: 1), curve: Curves.ease);
               },
             ),
             IconButton(
-              iconSize: 30.0,
+              iconSize: 28.0,
               padding: EdgeInsets.only(left: 28.0),
               icon: Icon(Icons.notifications),
               onPressed: () {
-                controller.animateToPage(3, duration: Duration(seconds: 1), curve: Curves.linear);
+                controller.animateToPage(3, duration: Duration(seconds: 1), curve: Curves.ease);
               },
             ),
             IconButton(
-              iconSize: 30.0,
+              iconSize: 28.0,
               padding: EdgeInsets.only(right: 28.0),
-              icon: Icon(Icons.list),
+              icon: Icon(Icons.account_box),
               onPressed: () {
-                controller.animateToPage(4, duration: Duration(seconds: 1), curve: Curves.linear);
+                controller.animateToPage(4, duration: Duration(seconds: 1), curve: Curves.ease);
               },
             )
           ],

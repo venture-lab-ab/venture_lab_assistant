@@ -24,7 +24,12 @@ class InboxScreen extends StatelessWidget {
 }
 
 class VentureLabScreen extends StatelessWidget {
-  String _launchUrl = 'https://www.venture-lab.de';
+
+
+
+
+  @override
+
   Future<void> _launchInApp(String url) async {
     if (await canLaunch(url)) {
       await launch(
@@ -38,8 +43,6 @@ class VentureLabScreen extends StatelessWidget {
     }
   }
 
-
-  @override
   Container myScrollList(String imageLink, String title, String subtitle,){
     return Container(
       width: 160,
@@ -60,7 +63,7 @@ class VentureLabScreen extends StatelessWidget {
                   minimumSize: Size(double.infinity, 30), // double.infinity is the width and 30 is the height
                 ),
                 onPressed: () {
-                  _launchInApp(_launchUrl);
+                  _launchInApp(subtitle);
                 },
               )
             ]),
@@ -76,6 +79,8 @@ class VentureLabScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+
+
         appBar: AppBar(
           backgroundColor: Color(0xff1D79FF),
           title: Text("Horizontal Scroll View"),
@@ -83,27 +88,30 @@ class VentureLabScreen extends StatelessWidget {
         ),
         backgroundColor: Color(0xfffcfcfc),
 
+
+
         body: Container(
+
 
           margin: EdgeInsets.symmetric(vertical: 200.0, horizontal: 5.0),
           width: double.infinity,
           height: 140,
+
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: <Widget>[
               myScrollList("https://www.th-ab.de/fileadmin/dokumente/allgemein/forschungsmarketing/VentureLab-startup-innovation-prototypes-th-Aschaffenburg-UAS.jpg",
                 "Visit our Website", 'https://www.venture-lab.de',),
               myScrollList("https://stadt-bremerhaven.de/wp-content/uploads/2017/02/Google-Maps-Banner.jpg",
-                "Find us", "GOOGLE MAPS",),
+                "Find us", 'https://www.google.com/maps/place/VentureLab/@49.970567,9.1587735,17z/data=!3m1!4b1!4m5!3m4!1s0x47bd49ce9b7753f1:0x252f1286106e47d7!8m2!3d49.970567!4d9.1609622',),
               myScrollList("https://www.pcgames.de/screenshots/original/2011/03/Youtube-Logo1.jpg",
-                "Visit our channel", "Colour",),
-              myScrollList("https://venture-lab.de/wp-content/uploads/2021/04/VentureLab-Prof-Boris-Bauke-595x400.jpg",
-                "sample", "tbd",),
-              myScrollList("https://cdn.pixabay.com/photo/2017/02/22/16/50/multnomah-falls-2089902__340.jpg",
-                "tbd", "tbd",),
-              myScrollList("https://cdn.pixabay.com/photo/2019/04/06/06/44/astronaut-4106766__340.jpg",
-                "tbd", "tbd",),
+                "Visit our channel", 'https://www.youtube.com/channel/UCAMCv554P5InV7ST7sDhuTg',),
+
             ],
+
+
+
+
           ),
         ),
       ),

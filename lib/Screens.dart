@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -74,6 +75,7 @@ class VentureLabScreen extends StatelessWidget {
     );
   }
 
+  final TextEditingController _Textcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -83,16 +85,31 @@ class VentureLabScreen extends StatelessWidget {
 
         appBar: AppBar(
           backgroundColor: Color(0xff1D79FF),
-          title: Text("Horizontal Scroll View"),
+          title: Text("VL "),
           centerTitle: true,
         ),
         backgroundColor: Color(0xfffcfcfc),
 
 
 
-        body: Container(
+        body: Stack(
+          children: <Widget> [
+
+          Container(
 
 
+          decoration: new BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/vlogo.png"),
+              colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
+              fit: BoxFit.cover,
+            ),
+          ),
+      ),
+
+
+
+          Container(
           margin: EdgeInsets.symmetric(vertical: 200.0, horizontal: 5.0),
           width: double.infinity,
           height: 140,
@@ -109,11 +126,45 @@ class VentureLabScreen extends StatelessWidget {
 
             ],
 
-
-
-
           ),
         ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start ,
+              children: [
+
+                Text ('Help us  improve!'),
+                (_Textcontroller.value.text.isEmpty) ? Text("Please enter your message") : Text("Sent Message: ${_Textcontroller.value.text}"),
+                Padding(
+                  padding:const EdgeInsets.all(10.0),
+                   child: TextFormField(
+                  minLines:2,
+                  maxLines:5,
+                  keyboardType: TextInputType.multiline,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor:Colors.white,
+                    hintText: 'Give us your feedback!',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                  ),
+                ),
+
+    ),
+                ElevatedButton(
+                  onPressed: () {
+
+
+                      _Textcontroller.notifyListeners();
+
+
+
+                  },child: Text("Send message"),)
+              ],
+
+            ),
+      ],
+      ),
       ),
     );
   }

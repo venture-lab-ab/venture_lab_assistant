@@ -28,7 +28,7 @@ dependencies:
   flutter_login: ^2.0.0
   firebase_auth: ^1.4.1
   url_launcher: ^6.0.8
-
+  webview_flutter: ^2.0.10
 
 
 

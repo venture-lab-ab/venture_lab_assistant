@@ -65,6 +65,8 @@ PODS:
   - PromisesObjC (2.0.0)
   - url_launcher (0.0.1):
     - Flutter
+  - webview_flutter (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
@@ -72,6 +74,7 @@ DEPENDENCIES:
   - firebase_database (from `.symlinks/plugins/firebase_database/ios`)
   - Flutter (from `Flutter`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+  - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
 
 SPEC REPOS:
   trunk:
@@ -98,6 +101,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   url_launcher:
     :path: ".symlinks/plugins/url_launcher/ios"
+  webview_flutter:
+    :path: ".symlinks/plugins/webview_flutter/ios"
 
 SPEC CHECKSUMS:
   Firebase: 817b9171d0d51dccc458b94a5e8edff6b1dd323d
@@ -116,6 +121,7 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
+  webview_flutter: 3603125dfd3bcbc9d8d418c3f80aeecf331c068b
 
 PODFILE CHECKSUM: 443482042ece2fdfcd67a41a4e8a80f1cbd9e1f6
 

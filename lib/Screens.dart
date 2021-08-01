@@ -1,27 +1,15 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
-class HomeScreen extends StatefulWidget {
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  Completer<WebViewController> _controller = Completer<WebViewController>();
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: WebView(
-      initialUrl: 'https://www.instagram.com/venturelabthab/',
-      javascriptMode: JavascriptMode.unrestricted,
-      onWebViewCreated: (WebViewController controller) {
-        _controller.complete(controller);
-      },
-    ));
+      body: Center(
+        child: Text("Index 0: NewsFeed"),
+      ),
+    );
   }
 }
 
@@ -30,14 +18,19 @@ class InboxScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(""),
+        child: Text("Index 1:Messages"),
       ),
     );
   }
 }
 
 class VentureLabScreen extends StatelessWidget {
+
+
+
+
   @override
+
   Future<void> _launchInApp(String url) async {
     if (await canLaunch(url)) {
       await launch(
@@ -51,14 +44,11 @@ class VentureLabScreen extends StatelessWidget {
     }
   }
 
-  Container myScrollList(
-    String imageLink,
-    String title,
-    String subtitle,
-  ) {
+  Container myScrollList(String imageLink, String title, String subtitle,){
     return Container(
       width: 160,
       height: 200,
+
       child: Card(
         color: Colors.white,
         child: Wrap(
@@ -67,17 +57,18 @@ class VentureLabScreen extends StatelessWidget {
               imageLink,
             ),
             Column(children: <Widget>[
+
               ElevatedButton(
-                child: Text(title),
+                child:  Text(title),
                 style: ElevatedButton.styleFrom(
-                  minimumSize: Size(double.infinity,
-                      30), // double.infinity is the width and 30 is the height
+                  minimumSize: Size(double.infinity, 30), // double.infinity is the width and 30 is the height
                 ),
                 onPressed: () {
                   _launchInApp(subtitle);
                 },
               )
             ]),
+
           ],
         ),
       ),
@@ -90,98 +81,104 @@ class VentureLabScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+
+
         appBar: AppBar(
           backgroundColor: Color(0xff1D79FF),
           title: Text("VL "),
           centerTitle: true,
         ),
         backgroundColor: Color(0xfffcfcfc),
+
+
+
         body: Stack(
-          children: <Widget>[
-            Container(
-              decoration: new BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("images/vlogo.png"),
-                  colorFilter: new ColorFilter.mode(
-                      Colors.black.withOpacity(0.2), BlendMode.dstATop),
-                  fit: BoxFit.cover,
-                ),
-              ),
+          children: <Widget> [
+
+          Container(
+
+
+          decoration: new BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/vlogo.png"),
+              colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
+              fit: BoxFit.cover,
             ),
+          ),
+      ),
+
+
+
+          Container(
+          margin: EdgeInsets.symmetric(vertical: 200.0, horizontal: 5.0),
+          width: double.infinity,
+          height: 140,
+
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: <Widget>[
+              myScrollList("https://www.th-ab.de/fileadmin/dokumente/allgemein/forschungsmarketing/VentureLab-startup-innovation-prototypes-th-Aschaffenburg-UAS.jpg",
+                "Visit our Website", 'https://www.venture-lab.de',),
+              myScrollList("https://stadt-bremerhaven.de/wp-content/uploads/2017/02/Google-Maps-Banner.jpg",
+                "Find us", 'https://www.google.com/maps/place/VentureLab/@49.970567,9.1587735,17z/data=!3m1!4b1!4m5!3m4!1s0x47bd49ce9b7753f1:0x252f1286106e47d7!8m2!3d49.970567!4d9.1609622',),
+              myScrollList("https://www.pcgames.de/screenshots/original/2011/03/Youtube-Logo1.jpg",
+                "Visit our channel", 'https://www.youtube.com/channel/UCAMCv554P5InV7ST7sDhuTg',),
+
+            ],
+
+          ),
+        ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.start ,
               children: [
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 50, horizontal: 5.0),
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.width * 0.35,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      myScrollList(
-                        "https://www.th-ab.de/fileadmin/dokumente/allgemein/forschungsmarketing/VentureLab-startup-innovation-prototypes-th-Aschaffenburg-UAS.jpg",
-                        "Visit our Website",
-                        'https://www.venture-lab.de',
-                      ),
-                      myScrollList(
-                        "https://stadt-bremerhaven.de/wp-content/uploads/2017/02/Google-Maps-Banner.jpg",
-                        "Find us",
-                        'https://www.google.com/maps/place/VentureLab/@49.970567,9.1587735,17z/data=!3m1!4b1!4m5!3m4!1s0x47bd49ce9b7753f1:0x252f1286106e47d7!8m2!3d49.970567!4d9.1609622',
-                      ),
-                      myScrollList(
-                        "https://www.pcgames.de/screenshots/original/2011/03/Youtube-Logo1.jpg",
-                        "Visit our channel",
-                        'https://www.youtube.com/channel/UCAMCv554P5InV7ST7sDhuTg',
-                      ),
-                    ],
+
+                Text ('Help us  improve!'),
+                (_Textcontroller.value.text.isEmpty) ? Text("Please enter your message") : Text("Sent Message: ${_Textcontroller.value.text}"),
+                Padding(
+                  padding:const EdgeInsets.all(10.0),
+                   child: TextFormField(
+                  minLines:2,
+                  maxLines:5,
+                  keyboardType: TextInputType.multiline,
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor:Colors.white,
+                    hintText: 'Give us your feedback!',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 150, horizontal: 5.0),
-                  height: 150,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(0),
-                        child: TextFormField(
-                          minLines: 2,
-                          maxLines: 5,
-                          keyboardType: TextInputType.multiline,
-                          decoration: InputDecoration(
-                            filled: true,
-                            fillColor: Colors.white,
-                            hintText: 'Give us your feedback!',
-                            border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
-                            ),
-                          ),
-                        ),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          _Textcontroller.notifyListeners();
-                        },
-                        child: Text("Send message"),
-                      )
-                    ],
-                  ),
-                )
+
+    ),
+                ElevatedButton(
+                  onPressed: () {
+
+
+                      _Textcontroller.notifyListeners();
+
+
+
+                  },child: Text("Send message"),)
               ],
-            )
-          ],
-        ),
+
+            ),
+      ],
+      ),
       ),
     );
   }
 }
 
+
+
+
 class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Index 3: Notifications"),
+        body: Center(
+          child: Text("Index 3: Notifications"),
       ),
     );
   }
@@ -191,9 +188,9 @@ class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Index 4: Account"),
-      ),
+        body: Center(
+          child: Text("Index 4: Account"),
+        ),
     );
   }
 }

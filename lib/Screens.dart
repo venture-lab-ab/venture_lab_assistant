@@ -58,21 +58,31 @@ class VentureLabScreen extends StatelessWidget {
   ) {
     return Container(
       width: 160,
-      height: 200,
+      height: 120,
       child: Card(
         color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+
         child: Wrap(
           children: <Widget>[
-            Image.network(
+            Image.asset(
               imageLink,
             ),
-            Column(children: <Widget>[
+            Column(
+
+                children: <Widget>[
+
               ElevatedButton(
                 child: Text(title),
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity,
-                      30), // double.infinity is the width and 30 is the height
-                ),
+                      50), //// double.infinity is the width and 30 is the height
+                  primary: Color(0xffFC696D),
+
+                            ),
+
                 onPressed: () {
                   _launchInApp(subtitle);
                 },
@@ -109,8 +119,11 @@ class VentureLabScreen extends StatelessWidget {
               ),
             ),
             Column(
+
+
               children: [
                 Container(
+
                   margin: EdgeInsets.symmetric(vertical: 50, horizontal: 5.0),
                   width: double.infinity,
                   height: MediaQuery.of(context).size.width * 0.35,
@@ -118,17 +131,17 @@ class VentureLabScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
                       myScrollList(
-                        "https://www.th-ab.de/fileadmin/dokumente/allgemein/forschungsmarketing/VentureLab-startup-innovation-prototypes-th-Aschaffenburg-UAS.jpg",
+                        "images/1.png",
                         "Visit our Website",
                         'https://www.venture-lab.de',
                       ),
                       myScrollList(
-                        "https://stadt-bremerhaven.de/wp-content/uploads/2017/02/Google-Maps-Banner.jpg",
+                        "images/2.png",
                         "Find us",
                         'https://www.google.com/maps/place/VentureLab/@49.970567,9.1587735,17z/data=!3m1!4b1!4m5!3m4!1s0x47bd49ce9b7753f1:0x252f1286106e47d7!8m2!3d49.970567!4d9.1609622',
                       ),
                       myScrollList(
-                        "https://www.pcgames.de/screenshots/original/2011/03/Youtube-Logo1.jpg",
+                        "images/3.png",
                         "Visit our channel",
                         'https://www.youtube.com/channel/UCAMCv554P5InV7ST7sDhuTg',
                       ),

@@ -145,6 +145,15 @@ class VentureLabScreen extends StatelessWidget {
                         "Visit our channel",
                         'https://www.youtube.com/channel/UCAMCv554P5InV7ST7sDhuTg',
                       ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => SecondRoute()),
+                          );
+                        },
+                        child: Text("Testing 2nd Route"),
+                      )
                     ],
                   ),
                 ),
@@ -188,6 +197,28 @@ class VentureLabScreen extends StatelessWidget {
     );
   }
 }
+
+class SecondRoute extends StatelessWidget {
+  Completer<WebViewController> _controller = Completer<WebViewController>();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body:
+      WebView(
+        initialUrl: 'https://www.venture-lab.de',
+        javascriptMode: JavascriptMode.unrestricted,
+        onWebViewCreated: (WebViewController controller) {
+          _controller.complete(controller);
+        },
+      )
+
+    );
+  }
+}
+
 
 class NotificationScreen extends StatelessWidget {
   @override
